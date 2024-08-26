@@ -28,7 +28,6 @@
               <span
                 :class="{
                   on: curTab == item.value,
-                  big: item.value == 'cxdylyw' || item.value == 'dzzzyw',
                 }"
                 v-for="item in tabList"
                 :key="item.value"
@@ -59,15 +58,15 @@
         </div>
         <div class="ez-container-right">
           <div class="ez-con-bt-one" @click="goPage('lnzwfww')">
-            <div class="txt">辽宁政务服务网</div>
+            <div class="txt">人才网</div>
           </div>
           <div class="ez-con-bt-blue-and-red">
             <div class="txt" @click="goEProvince('ks')">
-              跨省通办 <br />
+              省外 <br />
               专区
             </div>
             <div class="txt" @click="goEProvince('ln')">
-              省内通办 <br />
+              省内 <br />
               专区
             </div>
           </div>
@@ -137,7 +136,7 @@ import EzChooseType from "@/components/ezChooseType.vue";
 import { test1 } from "@/api/index";
 const tabList = reactive([
   {
-    name: "公安专区",
+    name: "公共专区",
     value: "gayw",
   },
   {
@@ -145,11 +144,11 @@ const tabList = reactive([
     value: "gryw",
   },
   {
-    name: "法人业务",
+    name: "集体业务",
     value: "fryw",
   },
   {
-    name: "电子证照业务",
+    name: "电子业务",
     value: "dzzzyw",
   },
 ]);
@@ -158,7 +157,7 @@ const router = useRouter();
 const formalStore = useFormalStore();
 // ------------------------------初始化相关------------------------------
 onMounted(() => {
-  document.title = "首页";
+  document.title = "一体化服务终端";
   GetCityBusinessTree("gayw");
 });
 
@@ -233,7 +232,8 @@ const chooseType = (type) => {
   if (type == "code") {
     let moduleUrl = formalStore.getModuleUrl;
     let moduleCode = formalStore.getModuleCode;
-    window.location.href = moduleUrl + "&moduleCode=" + moduleCode;
+    // window.location.href = moduleUrl + "&moduleCode=" + moduleCode;
+    window.location.href = "https://www.baidu.com?cs=" + "&moduleCode=" + moduleCode;
   }
 };
 // ------------------------------搜索框相关------------------------------
@@ -261,7 +261,7 @@ const gohome = () => {
 };
 const goPage = (type) => {
   if (type == "lnzwfww") {
-    window.location.href = "https://www.lnzwfw.gov.cn/?gb=1";
+    window.location.href = "https://www.baidu.com/";
   }
 };
 const goEProvince = (type) => {
@@ -303,7 +303,8 @@ const goModule = (item) => {
     if (item.moduleType == "3") {
       opMessageShow2.value = true;
     } else if (item.isNeedFace) {
-      window.location.href = item.moduleUrl;
+      // window.location.href = item.moduleUrl;
+      window.location.href = "https://www.baidu.com/";
     } else {
       router.push({ path: "/readingCardnoface", query: {} });
     }

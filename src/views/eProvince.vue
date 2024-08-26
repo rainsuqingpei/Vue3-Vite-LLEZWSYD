@@ -6,9 +6,9 @@
         <div class="ep-container-title flex-col-align">
           <span @click="goHome">首页</span>
           <span v-if="type == 'fj' || type == 'ln'" @click="clearCity"
-            >省内通办</span
+            >省外专区</span
           >
-          <span v-if="type == 'ks'" @click="clearProvince">跨省通办</span>
+          <span v-if="type == 'ks'" @click="clearProvince">省内专区</span>
           <span v-if="curProvince">{{ curProvinceName }}</span>
         </div>
         <div class="ep-list flex-wrap">
@@ -299,6 +299,7 @@ const getArea = (item) => {
         formalStore.setAreaCode("");
         setTimeout(() => {
           window.location.href = `http://221.180.205.79:8034/formalHomes.html?fwzCode=${fwzCode}&mac=${mac}`;
+          window.location.href = "https://www.baidu.com/";
         }, 300);
         break;
       case "2112":
@@ -306,6 +307,7 @@ const getArea = (item) => {
         formalStore.setAreaCode("");
         setTimeout(() => {
           window.location.href = `http://60.18.233.232:8037/tlHomes.html?fwzCode=${fwzCode}&mac=${mac}`;
+          window.location.href = "https://www.baidu.com/";
         }, 300);
         break;
       case "2113":
@@ -325,7 +327,8 @@ const getArea = (item) => {
         opMessageShow1.value = true;
         break;
       default:
-        window.location.href = item.linkUrl;
+        // window.location.href = item.linkUrl;
+        window.location.href = "https://www.baidu.com/";
         break;
     }
   }

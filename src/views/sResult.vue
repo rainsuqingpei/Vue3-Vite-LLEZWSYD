@@ -129,7 +129,8 @@ const goModule = (item) => {
     if (item.moduleType == "3") {
       opMessageShow2.value = true;
     } else if (item.isNeedFace) {
-      window.location.href = item.moduleUrl;
+      // window.location.href = item.moduleUrl;
+      window.location.href = "https://www.baidu.com/";
     } else {
       router.push({ path: "/readingCardnoface", query: {} });
     }

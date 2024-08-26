@@ -5,7 +5,7 @@
         {{ myTitle }}
       </div>
       <div class="ez-header-txt" v-else>
-        {{ defaultTxt }}政务一体化便民自助服务终端
+        {{ defaultTxt }}一体化服务终端
       </div>
       <div class="ez-btn-con">
         <div class="ez-home flex-col-row-align" @click="gohome">
@@ -36,7 +36,7 @@ const props = defineProps({
     default: "",
   },
 });
-const defaultTxt = ref("辽宁");
+const defaultTxt = ref(" ");
 onMounted(() => {
   let areaCode = sessionStorage.getItem("areaCode") || "";
   getCityName(areaCode);
@@ -44,7 +44,7 @@ onMounted(() => {
 const getCityName = (areaCode) => {
   switch (areaCode) {
     case "2100":
-      defaultTxt.value = "辽宁";
+      defaultTxt.value = " ";
       break;
     case "2112":
       defaultTxt.value = "铁岭";

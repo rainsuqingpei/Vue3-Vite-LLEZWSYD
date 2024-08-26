@@ -16,7 +16,7 @@ export default defineConfig({
     port: 3333,
     proxy: {
       '/zwzzj': {
-        target: 'http://218.60.154.3:8034/zwzzj',
+        target: 'http://47.122.44.51:8034/zwzzj',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/zwzzj/, ''),
       },
